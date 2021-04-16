@@ -386,11 +386,22 @@ public class ShadeMojo
     private Map<String, Shader> shaders;
 
     /**
+     * When true, skips the execution of this MOJO.
+     * @since 3.3.0
+     */
+    @Parameter( defaultValue = "false", property = "shade.skip" )
+    private boolean skip;
+    
+    /**
      * @throws MojoExecutionException in case of an error.
      */
     public void execute()
         throws MojoExecutionException
     {
+        if ( skip )
+        {
+            return;
+        }
 
         setupHintedShader();
 
