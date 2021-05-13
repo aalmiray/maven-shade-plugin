@@ -389,7 +389,7 @@ public class ShadeMojo
      * When true, skips the execution of this MOJO.
      * @since 3.3.0
      */
-    @Parameter( defaultValue = "false", property = "shade.skip" )
+    @Parameter( defaultValue = "false" )
     private boolean skip;
     
     /**
