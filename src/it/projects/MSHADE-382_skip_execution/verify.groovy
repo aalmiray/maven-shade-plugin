@@ -16,11 +16,5 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import java.io.*;
 
-File originalJarFile = new File( basedir, "target/original-skip-execution-1.0.jar" );
-
-if ( originalJarFile.exists() )
-{
-    throw new IllegalStateException( "Shading was not skipped." );
-}
+assert !(new File( basedir, "target/original-skip-execution-1.0.jar" ).exists()) : "Shading was not skipped."
